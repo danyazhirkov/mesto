@@ -1,4 +1,4 @@
-.popup__submit-button {
+.form__submit-button {
     background-color: #000000;
     display: flex;
     align-items: center;
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 597px) {
-    .popup__submit-button {
+    .form__submit-button {
         width: 238px;
         font-size: 14px;
         line-height: 17px;
