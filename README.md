@@ -7,4 +7,8 @@
 * HTML
 * JavaScript
 
+### Ссылка на проект:
+
+* - https://danyazhirkov.github.io/mesto/
+
 
