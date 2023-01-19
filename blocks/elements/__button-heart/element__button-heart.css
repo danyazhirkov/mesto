@@ -1,0 +1,9 @@
+.element__button-heart {
+    background-image: url(../../../images/heart.jpg);
+    background-color: transparent;
+    background-size: contain;
+    width: 22px;
+    height: 19px;
+    background-repeat: no-repeat;
+    border: none;
+}
