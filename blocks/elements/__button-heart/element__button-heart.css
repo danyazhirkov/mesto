@@ -1,9 +1,13 @@
 .element__button-heart {
-    background-image: url(../../../images/heart.jpg);
+    background-image: url(../../../images/heart.svg);
     background-color: transparent;
     background-size: contain;
     width: 22px;
     height: 19px;
     background-repeat: no-repeat;
     border: none;
+}
+
+.element__button-heart:hover {
+    cursor: pointer;
 }

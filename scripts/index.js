@@ -11,13 +11,13 @@ closeButton.addEventListener('click', removePopup);
 
 
 function getPopup() {
-    popupContainer.classList.add('popup__opened')
+    popupContainer.classList.add('popup_opened')
     nameInput.value = nameProfile.textContent;
     descriptionInput.value = nameDescription.textContent; 
 }
 
 function removePopup() {
-    popupContainer.classList.remove('popup__opened')
+    popupContainer.classList.remove('popup_opened')
 }
 
 function handleFormSubmit (evt) {
