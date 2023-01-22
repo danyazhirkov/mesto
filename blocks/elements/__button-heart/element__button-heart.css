@@ -10,4 +10,6 @@
 
 .element__button-heart:hover {
     cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
 }
