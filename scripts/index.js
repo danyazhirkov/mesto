@@ -46,8 +46,8 @@ const initialCards = [
   ];
 const template = document.querySelector('#card-template').content.querySelector('.element');
 const elements = document.querySelector('.elements');
-const inputName = document.querySelector('.form__item_input_name_second');
-const inputLink = document.querySelector('.form__item_input_description_second');
+const inputName = document.querySelector('.form__item_input-name_second');
+const inputLink = document.querySelector('.form__item_input-description_second');
 const popupImgSubtitle = document.querySelector('.popup__subtitle');
 const popupImage = document.querySelector('.popup__image');
 
