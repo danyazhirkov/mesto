@@ -16,8 +16,8 @@ const template = document.querySelector('#card-template').content.querySelector(
 const elements = document.querySelector('.elements');
 const inputName = document.querySelector('.form__item_input-name_second');
 const inputLink = document.querySelector('.form__item_input-description_second');
-const popupImgSubtitle = document.querySelector('.popup__subtitle');
-const popupImage = document.querySelector('.popup__image');
+const popupImgSubtitle = document.querySelector('.popup-subtitle');
+const popupImage = document.querySelector('.popup-photo');
 
 editButton.addEventListener('click', getPopupEditProfile);
 addButton.addEventListener('click', getPopupAddCard);
