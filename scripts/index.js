@@ -1,7 +1,7 @@
 const editButton = document.querySelector('.profile__edit-button');
 const popupContainer = document.querySelector('.popup');
 const popupAdd = document.querySelector('.popup_add');
-const popupGetImage = document.querySelector('.popup-image');
+const popupGetImage = document.querySelector('.popup_image');
 const closeButton = document.querySelector('.popup__close-button');
 const formElement = document.querySelector('.form');
 const formInput = document.querySelector('.form_input');
@@ -18,6 +18,7 @@ const inputName = document.querySelector('.form__item_input-name_second');
 const inputLink = document.querySelector('.form__item_input-description_second');
 const popupImgSubtitle = document.querySelector('.popup-subtitle');
 const popupImage = document.querySelector('.popup-photo');
+const form = document.querySelector('.form_input');
 
 editButton.addEventListener('click', getPopupEditProfile);
 addButton.addEventListener('click', getPopupAddCard);
@@ -60,7 +61,7 @@ function addFormSubmit (evt) {
   const card = createCard({name: title, link:link});
   elements.prepend(card);
   closePopupAddCard();
-  const form = document.querySelector('.form_input').reset();
+  form.reset();
 }
 formInput.addEventListener('submit', addFormSubmit);
 
@@ -100,7 +101,7 @@ function createCard(item) {
 
 function getPopup(popup) {
   popup.classList.add('popup_opened');
-  popup.classList.add('popup-image_active');
+  popup.classList.add('popup_image_active');
 }
 
 function getPopupEditProfile() {
@@ -115,7 +116,7 @@ function getPopupAddCard() {
 
 function removePopup(popup) {
     popup.classList.remove('popup_opened');
-    popup.classList.remove('popup-image_active');
+    popup.classList.remove('popup_image_active');
 }
 
 function closePopupEditProfile() {
