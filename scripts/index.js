@@ -11,13 +11,13 @@ const nameProfile = document.querySelector('.profile__name');
 const nameDescription = document.querySelector('.profile__description');
 const addButton = document.querySelector('.profile__add-button');
 const buttonClosePopupCard = document.querySelector('.popup__close-button_second');
-const buttonClosePopupImage = document.querySelector('.popup-close');
+const buttonClosePopupImage = document.querySelector('.popup__button-image');
 const template = document.querySelector('#card-template').content.querySelector('.element');
 const elements = document.querySelector('.elements');
 const inputName = document.querySelector('.form__item_input-name_second');
 const inputLink = document.querySelector('.form__item_input-description_second');
-const popupImgSubtitle = document.querySelector('.popup-subtitle');
-const popupImage = document.querySelector('.popup-photo');
+const popupImgSubtitle = document.querySelector('.popup__subtitle');
+const popupImage = document.querySelector('.popup__photo');
 const form = document.querySelector('.form_input');
 
 editButton.addEventListener('click', getPopupEditProfile);
