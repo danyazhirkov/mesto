@@ -33,3 +33,12 @@
         height: 46px;
     }
 }
+
+.form__submit-button_disabled {
+    color: #000000;
+    opacity: 0.15;
+    background-color:rgba(0, 0, 0, 0.15);
+    border: 1px solid #000000;
+    margin-top: 22px;
+    transition: opacity 0.5s ease-in-out;
+}
