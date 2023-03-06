@@ -13,7 +13,7 @@
     line-height: 22px;
     text-align: center;
     color: #FFFFFF;
-    margin-top: 47px;
+    margin-top: 18px;
     padding: 0;
     border: none;
 }
@@ -36,9 +36,13 @@
 
 .form__submit-button_disabled {
     color: #000000;
-    opacity: 0.15;
-    background-color:rgba(0, 0, 0, 0.15);
+    background: #FFFFFF;
     border: 1px solid #000000;
-    margin-top: 22px;
-    transition: opacity 0.5s ease-in-out;
+    opacity: 0.15;
+}
+
+.form__submit-button_disabled:hover {
+    cursor: default;
+    transition: none;
+    opacity: 0.15;
 }
