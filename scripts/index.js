@@ -15,10 +15,12 @@ const descriptionInput = document.querySelector(
 const nameProfile = document.querySelector(".profile__name");
 const nameDescription = document.querySelector(".profile__description");
 const addButton = document.querySelector(".profile__add-button");
-const buttonClosePopupCard = document.querySelector(
+const closeButtonPopupPlace = popupAdd.querySelector(
     ".popup__close-button_second"
 );
-const buttonClosePopupImage = document.querySelector(".popup__button-image");
+const closeButtonPopupImage = popupGetImage.querySelector(
+    ".popup__button-image"
+);
 const template = document
     .querySelector("#card-template")
     .content.querySelector(".element");
@@ -37,8 +39,8 @@ const popupAll = [popupProfile, popupAdd, popupGetImage];
 editButton.addEventListener("click", openPopupEditProfile);
 addButton.addEventListener("click", openPopupAddCard);
 closeButtonPopupProfile.addEventListener("click", closePopupEditProfile);
-buttonClosePopupCard.addEventListener("click", closePopupAddCard);
-buttonClosePopupImage.addEventListener("click", closePopupPhoto);
+closeButtonPopupPlace.addEventListener("click", closePopupAddCard);
+closeButtonPopupImage.addEventListener("click", closePopupPhoto);
 
 const initialCards = [
     {
@@ -122,7 +124,6 @@ function createCard(item) {
 function openPopup(popup) {
     popup.classList.add("popup_opened");
     document.addEventListener("keydown", keyEscHandler);
-    console.log("открыл");
 }
 
 function openPopupEditProfile() {
@@ -142,7 +143,6 @@ function openPopupPhoto() {
 function closePopup(popup) {
     popup.classList.remove("popup_opened");
     document.removeEventListener("keydown", keyEscHandler);
-    console.log("закрыл");
 }
 
 function closePopupEditProfile() {
