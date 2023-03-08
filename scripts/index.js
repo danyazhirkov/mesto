@@ -2,7 +2,9 @@ const editButton = document.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_profile");
 const popupAdd = document.querySelector(".popup_add");
 const popupGetImage = document.querySelector(".popup_image");
-const closeButtonPopupProfile = popupProfile.querySelector(".popup__close-button");
+const closeButtonPopupProfile = popupProfile.querySelector(
+    ".popup__close-button"
+);
 const formEditProfile = popupProfile.querySelector(".form");
 const formAddCard = document.querySelector(".form_input");
 const nameInput = document.querySelector(".form__item_input_name");
@@ -120,7 +122,7 @@ function createCard(item) {
 function openPopup(popup) {
     popup.classList.add("popup_opened");
     document.addEventListener("keydown", keyEscHandler);
-    console.log('открыл');
+    console.log("открыл");
 }
 
 function openPopupEditProfile() {
@@ -140,7 +142,7 @@ function openPopupPhoto() {
 function closePopup(popup) {
     popup.classList.remove("popup_opened");
     document.removeEventListener("keydown", keyEscHandler);
-    console.log('закрыл');
+    console.log("закрыл");
 }
 
 function closePopupEditProfile() {
@@ -164,9 +166,10 @@ function handleFormSubmit(evt) {
 formEditProfile.addEventListener("submit", handleFormSubmit);
 
 function keyEscHandler(evt) {
-        if (evt.key === "Escape") {
-            closePopup(document.querySelector('.popup_opened'))
-        }};
+    if (evt.key === "Escape") {
+        closePopup(document.querySelector(".popup_opened"));
+    }
+};
 
 const closePopupByOverlayClick = function (e) {
     if (e.target === e.currentTarget) {
