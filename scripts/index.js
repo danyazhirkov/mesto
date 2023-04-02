@@ -1,8 +1,8 @@
-const editButton = document.querySelector(".profile__edit-button");
+const buttonEditProfile = document.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_profile");
 const popupAdd = document.querySelector(".popup_add");
 const popupGetImage = document.querySelector(".popup_image");
-const closeButtonPopupProfile = popupProfile.querySelector(
+const buttonClosePopupProfile = popupProfile.querySelector(
     ".popup__close-button"
 );
 const formEditProfile = popupProfile.querySelector(".form");
@@ -15,10 +15,10 @@ const descriptionInput = document.querySelector(
 const nameProfile = document.querySelector(".profile__name");
 const nameDescription = document.querySelector(".profile__description");
 const addButton = document.querySelector(".profile__add-button");
-const closeButtonPopupPlace = popupAdd.querySelector(
+const buttonClosePopupPlace = popupAdd.querySelector(
     ".popup__close-button_second"
 );
-const closeButtonPopupImage = popupGetImage.querySelector(
+const buttonClosePopupImage = popupGetImage.querySelector(
     ".popup__button-image"
 );
 // const template = document
@@ -37,7 +37,7 @@ const buttonSubmit = formAddCard.querySelector(".form__submit-button");
 
 export {
     popupGetImage,
-    closeButtonPopupImage,
+    buttonClosePopupImage,
     popupImage,
     popupImgSubtitle,
     buttonSubmit,
@@ -45,10 +45,11 @@ export {
     elements
 };
 
-editButton.addEventListener("click", openPopupEditProfile);
+buttonEditProfile.addEventListener("click", openPopupEditProfile);
 addButton.addEventListener("click", openPopupAddCard);
-closeButtonPopupProfile.addEventListener("click", closePopupEditProfile);
-closeButtonPopupPlace.addEventListener("click", closePopupAddCard);
+buttonClosePopupProfile.addEventListener("click", closePopupEditProfile);
+buttonClosePopupPlace.addEventListener("click", closePopupAddCard);
+buttonClosePopupImage.addEventListener("click", closePopupPhoto);
 
 import { Card} from './Card.js';
 import { FormValidator} from './FormValidator.js';
@@ -102,19 +103,38 @@ initialCards.forEach((item) => {
 
 formValidatorPopupAdd.resetValidation();
 
+// function addFormSubmit(evt) {
+//     evt.preventDefault();
+//     const obj = {
+//         name: inputName.value,
+//         link: inputLink.value
+//     }
+//     const card = new Card(obj, "#card-template");
+//     const cardElement = card.createCard();
+//     elements.prepend(cardElement);
+//     closePopupAddCard();
+//     formAddCard.reset();
+// }
+formAddCard.addEventListener("submit", addFormSubmit);
+
+function generateCard() { 
+    const obj = {
+    name:  inputName.value,
+    link: inputLink.value
+  }
+  const card = new Card(obj, '#card-template');
+  return card.createCard();
+};
+function addCard(card) {  
+  elements.prepend(card);
+};
+
 function addFormSubmit(evt) {
     evt.preventDefault();
-    const obj = {
-        name: inputName.value,
-        link: inputLink.value
-    }
-    const card = new Card(obj, "#card-template");
-    const cardElement = card.createCard();
-    elements.prepend(cardElement);
+    addCard(generateCard());
     closePopupAddCard();
     formAddCard.reset();
 }
-formAddCard.addEventListener("submit", addFormSubmit);
 
 // renderCards(initialCards);
 
@@ -147,7 +167,7 @@ formAddCard.addEventListener("submit", addFormSubmit);
 //     return card;
 // }
 
-function openPopup(popup) {
+export function openPopup(popup) {
     popup.classList.add("popup_opened");
     document.addEventListener("keydown", keyEscHandler);
 }
@@ -175,9 +195,9 @@ function closePopupAddCard() {
     closePopup(popupAdd);
 }
 
-// function closePopupPhoto() {
-//     closePopup(popupGetImage);
-// }
+function closePopupPhoto() {
+    closePopup(popupGetImage);
+}
 
 function handleFormSubmit(evt) {
     evt.preventDefault();
@@ -204,9 +224,7 @@ addButton.addEventListener('click', ()=> {
 })
 
 
-
 popupProfile.addEventListener("click", closePopupByOverlayClick);
 popupAdd.addEventListener("click", closePopupByOverlayClick);
 popupGetImage.addEventListener("click", closePopupByOverlayClick);
 
-export {keyEscHandler};

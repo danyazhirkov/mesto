@@ -32,9 +32,6 @@ export class FormValidator {
         this._submitButton.classList.remove(this._config.buttonDisabledClass);
     };
     _togglePopupButton() {
-        this._inputs = Array.from(
-            this._form.querySelectorAll(this._config.inputSelector)
-        );
         this._formIsValid = this._inputs.every((input) => input.validity.valid);
         if (this._formIsValid) {
             this._enableButton();
