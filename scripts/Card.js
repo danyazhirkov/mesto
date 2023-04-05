@@ -1,11 +1,9 @@
-
 import {
     popupGetImage,
     popupImage,
     popupImgSubtitle,
-    openPopup
+    openPopup,
 } from "./index.js";
-
 
 export class Card {
     constructor(data, templateSelector) {
@@ -37,13 +35,12 @@ export class Card {
             .addEventListener("click", () => {
                 this._handleSetLike();
             });
-            this._element
+        this._element
             .querySelector(".element__button-trash")
             .addEventListener("click", () => {
                 this._hadleDeleteCard();
             });
-            this._openPopupPhotoListener();
-
+        this._openPopupPhotoListener();
     }
 
     _handleSetLike() {
@@ -58,15 +55,17 @@ export class Card {
             .closest(".element")
             .remove();
     }
-    _openPopupPhotoListener() { 
-        this._element.querySelector('.element__photo').addEventListener('click', () => {
-          this._openPopupPhoto();
-        });
-      }
-      _openPopupPhoto() {  
+    _openPopupPhotoListener() {
+        this._element
+            .querySelector(".element__photo")
+            .addEventListener("click", () => {
+                this._openPopupPhoto();
+            });
+    }
+    _openPopupPhoto() {
         openPopup(popupGetImage);
         popupImage.src = this._link;
         popupImgSubtitle.textContent = this._name;
         popupImage.alt = this._name;
-
-}}
+    }
+}
