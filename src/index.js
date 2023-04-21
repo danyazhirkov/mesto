@@ -1,14 +1,13 @@
-console.log('dadada')
+console.log("aaa")
+import "./pages/index.css"
 
-import "../pages/index.css";
-
-import Card from "../scripts/Card.js";
-import { FormValidator } from "../scripts/FormValidator.js";
-import { initialCards } from "../scripts/cards.js";
-import PopupWithForm from "../scripts/PopupWithForm.js";
-import PopupWithImage from "../scripts/PopupWithImage.js";
-import Section from "../scripts/Section.js";
-import UserInfo from "../scripts/UserInfo.js";
+import Card from "./scripts/Card.js";
+import { FormValidator } from "./scripts/FormValidator.js";
+import { initialCards } from "./scripts/cards.js";
+import PopupWithForm from "./scripts/PopupWithForm.js";
+import PopupWithImage from "./scripts/PopupWithImage.js";
+import Section from "./scripts/Section.js";
+import UserInfo from "./scripts/UserInfo.js";
 
 export const buttonEditProfile = document.querySelector(
     ".profile__edit-button"
