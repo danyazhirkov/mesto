@@ -9,17 +9,7 @@ import PopupWithImage from "./scripts/PopupWithImage.js";
 import Section from "./scripts/Section.js";
 import UserInfo from "./scripts/UserInfo.js";
 
-export const buttonEditProfile = document.querySelector(
-    ".profile__edit-button"
-);
-const popupProfile = document.querySelector(".popup_profile");
-const popupAdd = document.querySelector(".popup_add");
-const nameInput = document.querySelector(".form__item_input_name");
-const descriptionInput = document.querySelector(
-    ".form__item_input_description"
-);
-
-const addButton = document.querySelector(".profile__add-button");
+import { buttonEditProfile, popupProfile, popupAdd, nameInput, descriptionInput, addButton } from "./scripts/constants";
 
 const config = {
     inputSelector: ".form__item",
