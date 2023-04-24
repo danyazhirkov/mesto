@@ -5,18 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mesto</title>
-        <link rel="stylesheet" href="./pages/index.css" />
     </head>
 
     <body class="page">
         <header class="header">
             
-            <img src="<%=require('./images/Logo.svg')%>" class="header__logo" alt="Лого" />
+            <img src="./images/Logo.svg" class="header__logo" alt="Лого" />
         </header>
         <main class="main">
             <section class="profile">
                 <img
-                    src="<%=require('./images/kusto.jpg')%>"
+                    src="./images/kusto.jpg"
                     class="profile__avatar"
                     alt="Аватарка"
                 />
@@ -27,7 +26,7 @@
                     </div>
                     <button type="button" class="profile__edit-button">
                         <img
-                            src="<%=require('./images/Vector.svg')%>"
+                            src="./images/Vector.svg"
                             class="profile__edit-image"
                             alt="Вектор"
                         />
@@ -45,7 +44,7 @@
             <template id="card-template">
                 <div class="element">
                     <img
-                        src="<%=require('./images/arkhyz.jpeg')%>"
+                        src="./images/arkhyz.jpeg"
                         class="element__photo"
                         alt="Фото"
                     />
@@ -153,14 +152,5 @@
                 <p class="popup__subtitle"></p>
             </div>
         </section>
-        <script type="module" src="src/index.js" defer></script>
-        <script type="module" src="./scripts/Card.js" defer></script>
-        <script type="module" src="./scripts/FormValidator.js" defer></script>
-        <script type="module" src="./scripts/cards.js" defer></script>
-        <script type="module" src="./scripts/Popup.js" defer></script>
-        <script type="module" src="./scripts/PopupWithForm.js" defer></script>
-        <script type="module" src="./scripts/PopupWithImage.js" defer></script>
-        <script type="module" src="./scripts/Section.js" defer></script>
-        <script type="module" src="./scripts/UserInfo.js" defer></script>
     </body>
 </html>
