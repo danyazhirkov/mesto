@@ -1,4 +1,4 @@
-console.log("aaa")
+
 import "./pages/index.css"
 
 import Card from "./scripts/Card.js";
