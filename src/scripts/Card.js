@@ -19,7 +19,7 @@ class Card {
 		this._handleDeleteYourCard = handleDeleteYourCard;
 	};
 
-	_getTemplate() {										// забираем разметку из HTML и клонируем элемент
+	_getTemplate() {
 
 		const cardElement = document
 			.querySelector(this._template)
@@ -31,15 +31,12 @@ class Card {
 		this._buttonBin = cardElement.querySelector('.element__button-trash');
 		this._elementImage = cardElement.querySelector('.element__photo');
 
-		return cardElement;								// вернём DOM-элемент карточки
+		return cardElement;							
 	};
-
-	// Подготовка карточки к публикации
-	// Метод наполняет карточки данными и функциональностью
 
 	generateCard() {
 
-		this._element = this._getTemplate(); 		// Запишем разметку в приватное поле _element, так у других элементов появится доступ к ней.
+		this._element = this._getTemplate();
 
 		this._elementImage.src = this._link;
 		this._element.querySelector('.element__name').textContent = this._name;
@@ -53,12 +50,12 @@ class Card {
 			this._buttonBin.style.display = 'none'
 		};
 
-		this._setEventListeners();							// Добавим слушателей
+		this._setEventListeners();
 
 		return this._element;
 	};
 
-	_setEventListeners() {					// Установка слушателей событий на создаваемую карточку
+	_setEventListeners() {
 
 		this._buttonBin.addEventListener('click', () => {
 			this._handleDeleteYourCard(this, this._cardId);
@@ -83,7 +80,6 @@ class Card {
 	};
 
 	_handleLikeCard() {
-		// this._likeCardButton.classList.toggle('elements__button-like_active');
 		if (this._ifCardLiked()) {
 			this._handleUnlike(this._cardId)
 		} else {
