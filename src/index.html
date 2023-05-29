@@ -9,16 +9,21 @@
 
     <body class="page">
         <header class="header">
-            
-            <img src="<%=require('./images/Logo.svg')%>" class="header__logo" alt="Лого" />
+            <img
+                src="<%=require('./images/Logo.svg')%>"
+                class="header__logo"
+                alt="Лого"
+            />
         </header>
         <main class="main">
             <section class="profile">
-                <img
-                    src="<%=require('./images/kusto.jpg')%>"
-                    class="profile__avatar"
-                    alt="Аватарка"
-                />
+                <button class="profile__avatar-button">
+                    <img
+                        src="<%=require('./images/kusto.jpg')%>"
+                        class="profile__avatar"
+                        alt="Аватарка"
+                    />
+                </button>
                 <div class="profile__info">
                     <div class="profile__items">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -40,6 +45,7 @@
                     />
                 </button>
             </section>
+
             <section class="elements"></section>
             <template id="card-template">
                 <div class="element">
@@ -54,10 +60,11 @@
                     ></button>
                     <div class="element__description">
                         <h2 class="element__name">Архыз</h2>
-                        <button
+                        <div class="element__likes-stuff"><button
                             type="button"
                             class="element__button-heart"
                         ></button>
+                        <div class="element__like-counter">0</div></div>
                     </div>
                 </div>
             </template>
@@ -67,9 +74,12 @@
         </footer>
         <section class="popup popup_profile" id="popup_profile">
             <div class="popup__container">
-                <button type="button" class="popup__close-button popup__close-button_first"></button>
+                <button
+                    type="button"
+                    class="popup__close-button popup__close-button_first"
+                ></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form name="name" class="form" novalidate>
+                <form name="name" class="form form_profile" novalidate>
                     <input
                         type="text"
                         name="name"
@@ -79,11 +89,12 @@
                         required
                         minlength="2"
                         maxlength="40"
+                        autocomplete="on"
                     />
                     <span id="name-input-error" class="form__item-error"></span>
                     <input
                         type="text"
-                        name="info"
+                        name="about"
                         class="form__item form__item_input_description"
                         placeholder="description"
                         required
@@ -143,13 +154,58 @@
         </section>
         <section class="popup popup_image" id="popup_image">
             <div class="popup__background">
-                <button type="button" class="popup__close-button popup__button-image"></button>
-                <img
-                    src="#"
-                    class="popup__photo"
-                    alt="Фото"
-                />
+                <button
+                    type="button"
+                    class="popup__close-button popup__button-image"
+                ></button>
+                <img src="#" class="popup__photo" alt="Фото" />
                 <p class="popup__subtitle"></p>
+            </div>
+        </section>
+        <section class="popup popup_confirm" id="popup_confirm">
+            <div class="popup__container popup__container_confirm">
+                <button
+                    type="button"
+                    class="popup__close-button popup__close-button_confirm"
+                ></button>
+                <h3 class="popup__title popup__title_confirm">Вы уверены?</h3>
+                <form name="name" class="form form_confirm" novalidate>
+                    <button
+                        type="submit"
+                        class="form__submit-button form__submit-button_confirm"
+                    >
+                        Да
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="popup popup_avatar" id="popup_avatar">
+            <div class="popup__container popup__container_avatar">
+                <button
+                    type="button"
+                    class="popup__close-button popup__close-button_avatar"
+                ></button>
+                <h3 class="popup__title popup__title_avatar">
+                    Обновить аватар
+                </h3>
+                <form name="name" class="form form_avatar" id="formEditAvatar" novalidate>
+                    <input
+                        class="form__item form__item_input-avatar"
+                        type="url"
+                        name="avatar"
+                        id="avatar-input"
+                        placeholder="Ссылка на картинку"
+                        required
+                    />
+                    <span id="avatar-input-error" class="form__item-error"></span>
+                    <button
+                        type="submit"
+                        class="form__submit-button form__submit-button_avatar"
+                    >
+                        Сохранить
+                    </button>
+                </form>
             </div>
         </section>
     </body>

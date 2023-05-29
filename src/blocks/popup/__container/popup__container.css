@@ -11,6 +11,10 @@
     height: 330px;
 }
 
+.popup__container_confirm {
+    height: 181px;
+}
+
 @media screen and (max-width: 597px) {
     .popup__container {
         width: 282px;

@@ -18,6 +18,10 @@
     border: none;
 }
 
+.form__submit-button_confirm {
+    margin-top: 0;
+}
+
 .form__submit-button:hover {
     cursor: pointer;
     opacity: 0.8;
